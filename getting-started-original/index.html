@@ -12,7 +12,7 @@
         <meta name="author" content="Kyrylo Mishakin">
       
       
-        <link rel="canonical" href="https://nevarok.com/philosophy/">
+        <link rel="canonical" href="https://nevarok.com/getting-started-original/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Philosophy - nevarok</title>
+        <title>Getting started - nevarok</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#philosophy" class="md-skip">
+        <a href="#getting-started" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Philosophy
+              Getting started
             
           </span>
         </div>
@@ -526,23 +526,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#design-principles" class="md-nav__link">
-    Design principles
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conventions" class="md-nav__link">
-    Conventions
-  </a>
-  
-    <nav class="md-nav" aria-label="Conventions">
+    <nav class="md-nav" aria-label="Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#symbols" class="md-nav__link">
-    Symbols
+  <a href="#with-pip" class="md-nav__link">
+    with pip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-docker" class="md-nav__link">
+    with docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-git" class="md-nav__link">
+    with git
   </a>
   
 </li>
@@ -567,100 +574,123 @@
                   
 
 
-<h1 id="philosophy">Philosophy</h1>
-<p>Before settling for Material for MkDocs, it's a good idea to understand the
-philosophy behind the project, in order to make sure it aligns with your goals.
-This page explains the design principles anchored in Material for MkDocs, and
-discusses the <a href="#conventions">conventions</a> used in this documentation.</p>
-<h2 id="design-principles">Design principles</h2>
+<h1 id="getting-started">Getting started</h1>
+<p>Material for MkDocs is a theme for <a href="https://www.mkdocs.org">MkDocs</a>, a static site generator geared
+towards (technical) project documentation. If you're familiar with Python, you
+can install Material for MkDocs with <a href="#with-pip"><code>pip</code></a>, the Python package manager.
+If not, we recommend using <a href="#with-docker"><code>docker</code></a>.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="with-pip">with pip <small>recommended</small></h3>
+<p>Material for MkDocs is published as a <a href="https://pypi.org/project/mkdocs-material/">Python package</a> and can be installed with
+<code>pip</code>, ideally by using a <a href="https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment">virtual environment</a>. Open up a terminal and install
+Material for MkDocs with:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Latest</label><label for="__tabbed_1_2">9.x</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="o">==</span><span class="s2">&quot;9.*&quot;</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
+<ol>
+<li>
+<p>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, which is why it's a
+    good idea to limit upgrades to the current major version.</p>
+<p>This will make sure that you don't accidentally <a href="../upgrade/">upgrade to the next
+major version</a>, which may include breaking changes that silently corrupt
+your site. Additionally, you can use <code>pip freeze</code> to create a lockfile,
+so builds are reproducible at all times:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip freeze &gt; requirements.txt
+</span></code></pre></div>
+<p>Now, the lockfile can be used for installation:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install -r requirements.txt
+</span></code></pre></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p>This will automatically install compatible versions of all dependencies:
+<a href="https://www.mkdocs.org">MkDocs</a>, <a href="https://python-markdown.github.io/">Markdown</a>, <a href="https://pygments.org/">Pygments</a> and <a href="https://facelessuser.github.io/pymdown-extensions/">Python Markdown Extensions</a>. Material for
+MkDocs always strives to support the latest versions, so there's no need to
+install those packages separately.</p>
+<hr />
+<p><span class="twemoji" style="color: #EE0F0F"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span>
+<strong><a href="https://www.youtube.com/watch?v=Q-YA_dA8C20">How to set up Material for MkDocs</a></strong> by <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/james-willett" title="GitHub User: james-willett">@james-willett</a> – <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.5 7.25a.75.75 0 0 0-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 0 0 .744-1.302L12.5 12.315V7.25Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></svg></span>
+15m – Learn how to create and host a documentation site using Material for 
+MkDocs on GitHub Pages in a step-by-step guide.</p>
+<hr />
+<p><strong>Tip</strong>: If you don't have prior experience with Python, we recommend reading 
+<a href="https://realpython.com/what-is-pip/">Using Python's pip to Manage Your Projects' Dependencies</a>, which is a really
+good introduction on the mechanics of Python package management and helps you
+troubleshoot if you run into errors.</p>
+<h3 id="with-docker">with docker</h3>
+<p>The official <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/">Docker image</a> is a great way to get up and running in a few
+minutes, as it comes with all dependencies pre-installed. Open up a terminal
+and pull the image with:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Latest</label><label for="__tabbed_2_2">9.x</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull squidfunk/mkdocs-material
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker pull squidfunk/mkdocs-material:9
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>The <code>mkdocs</code> executable is provided as an entry point and <code>serve</code> is the 
+default command. If you're not familiar with Docker don't worry, we have you
+covered in the following sections.</p>
+<p>The following plugins are bundled with the Docker image:</p>
 <ul>
-<li>
-<p><strong>It's just Markdown</strong>: Focus on the content of your documentation and create
-  a professional static site in minutes. No need to know HTML,CSS or JavaScript
-  – let Material for MkDocs do the heavy lifting for you.</p>
-</li>
-<li>
-<p><strong>Works on all devices</strong>: Serve your documentation with confidence – the 
-  underlying layout automatically adapts to perfectly fit the available screen 
-  estate, no matter the type or size of the viewing device.</p>
-</li>
-<li>
-<p><strong>Made to measure</strong>: Change the colors, fonts, language, icons, logo and much
-  more with a few lines of configuration. Material for MkDocs can be easily 
-  extended and provides tons of options to alter appearance and behavior.</p>
-</li>
-<li>
-<p><strong>Fast and lightweight</strong>: Don't let your users wait – get incredible value
-  with a small footprint, by using one of the fastest themes around with
-  excellent performance, yielding great search engine rankings and happy
-  users that return.</p>
-</li>
-<li>
-<p><strong>Accessible</strong>: Make accessibility a priority – users can navigate your
-  documentation with touch devices, keyboard, and screen readers. Semantic
-  markup ensures that your documentation works for everyone.</p>
-</li>
-<li>
-<p><strong>Open Source</strong>: Trust 20,000+ users – choose a mature and well-funded
-  solution built with state-of-the-art Open Source technologies. Keep ownership
-  of your content without fear of vendor lock-in. Licensed under MIT.</p>
-</li>
+<li><a href="https://github.com/byrnereese/mkdocs-minify-plugin">mkdocs-minify-plugin</a></li>
+<li><a href="https://github.com/datarobot/mkdocs-redirects">mkdocs-redirects</a></li>
 </ul>
-<h2 id="conventions">Conventions</h2>
-<h3 id="symbols">Symbols</h3>
-<p>This documentation use some symbols for illustration purposes. Before you read
-on, please make sure you've made yourself familiar with the following list of
-conventions:</p>
-<dl>
-<dt><a class="mdx-insiders" href="../insiders/"><span class="twemoji mdx-heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 20.408c-.492.308-.903.546-1.192.709-.153.086-.308.17-.463.252h-.002a.75.75 0 0 1-.686 0 16.709 16.709 0 0 1-.465-.252 31.147 31.147 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31.146 31.146 0 0 1 14 20.408Z"/></svg></span> &nbsp; Insiders</a></dt>
-<dd>
-<p>Some features are not yet available in the community edition, but only as
-part of the Insiders build of Material for MkDocs. Please consult the 
-<a href="../insiders/">Insiders</a> guide to learn how to get access.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> &nbsp; <strong>{x.x.x}</strong></dt>
-<dd>
-<p>The tag icon in conjunction with a version number denotes when a specific 
-feature or behavior was added. Make sure you're at least on this version
-if you want to use it.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04Zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></svg></span> &nbsp; <strong>{file.ext}</strong></dt>
-<dd>
-<p>The source file icon together with a file name is sometimes used in code
-examples which span multiple files. The file name (or path) always starts
-from the location of <code>mkdocs.yml</code>.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> &nbsp; <strong>Default</strong>: <em>value</em></dt>
-<dd>
-<p>Some properties in <code>mkdocs.yml</code> have default values for when the author
-does not explicitly define them. The default value of the property is always
-included.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 7.25V9h11a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 19.5v-8A2.5 2.5 0 0 1 5.5 9H6V7.25C6 3.845 8.503 1 12 1c2.792 0 4.971 1.825 5.718 4.31a.75.75 0 1 1-1.436.432C15.71 3.84 14.079 2.5 12 2.5c-2.578 0-4.5 2.08-4.5 4.75Zm-3 4.25v8a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-13a1 1 0 0 0-1 1Z"/></svg></span> &nbsp; <strong>Feature flag</strong></dt>
-<dd>
-<p>Most of the features are hidden behind feature flags, which means they must
-be explicitly enabled via <code>mkdocs.yml</code>. This allows for the existence of
-potentially orthogonal features.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 8.807V3.5h-.563a.75.75 0 0 1 0-1.5h9.125a.75.75 0 0 1 0 1.5H16v5.307l5.125 9.301c.964 1.75-.302 3.892-2.299 3.892H5.174c-1.998 0-3.263-2.142-2.3-3.892ZM4.189 18.832a1.123 1.123 0 0 0 .985 1.668h13.652a1.123 1.123 0 0 0 .985-1.668L17.7 15H6.3ZM14.5 3.5h-5V9a.75.75 0 0 1-.093.362L7.127 13.5h9.746l-2.28-4.138A.75.75 0 0 1 14.5 9Z"/></svg></span> &nbsp; <strong>Experimental</strong></dt>
-<dd>
-<p>Some newer features are still considered experimental, which means they
-might (although rarely) change at any time, including their complete removal 
-(which hasn't happened yet).</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.75 8h6.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75h-6.5a.75.75 0 0 1-.75-.75v-6.5A.75.75 0 0 1 8.75 8Zm.75 6.5h5v-5h-5Z"/><path d="M15.25 1a.75.75 0 0 1 .75.75V4h2.25c.966 0 1.75.784 1.75 1.75V8h2.25a.75.75 0 0 1 0 1.5H20v5h2.25a.75.75 0 0 1 0 1.5H20v2.25A1.75 1.75 0 0 1 18.25 20H16v2.25a.75.75 0 0 1-1.5 0V20h-5v2.25a.75.75 0 0 1-1.5 0V20H5.75A1.75 1.75 0 0 1 4 18.25V16H1.75a.75.75 0 0 1 0-1.5H4v-5H1.75a.75.75 0 0 1 0-1.5H4V5.75C4 4.784 4.784 4 5.75 4H8V1.75a.75.75 0 0 1 1.5 0V4h5V1.75a.75.75 0 0 1 .75-.75Zm3 17.5a.25.25 0 0 0 .25-.25V5.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25Z"/></svg></span> &nbsp; <strong>Plugin</strong></dt>
-<dd>
-<p>Several features are implemented through MkDocs excellent plugin
-architecture, some of which are built-in and distributed with Material for
-MkDocs, so no installation is required.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.876.64V.639l8.25 4.763c.541.313.875.89.875 1.515v9.525a1.75 1.75 0 0 1-.875 1.516l-8.25 4.762a1.748 1.748 0 0 1-1.75 0l-8.25-4.763a1.75 1.75 0 0 1-.875-1.515V6.917c0-.625.334-1.202.875-1.515L11.126.64a1.748 1.748 0 0 1 1.75 0Zm-1 1.298L4.251 6.34l7.75 4.474 7.75-4.474-7.625-4.402a.248.248 0 0 0-.25 0Zm.875 19.123 7.625-4.402a.25.25 0 0 0 .125-.216V7.639l-7.75 4.474ZM3.501 7.64v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"/></svg></span> &nbsp; <strong>Utility</strong></dt>
-<dd>
-<p>Besides plugins, there are some utilities that build on top of MkDocs in
-order to provide extended functionality, like for example support for
-versioning.</p>
-</dd>
-</dl>
+<details class="question">
+<summary>How to add plugins to the Docker image?</summary>
+<p>Material for MkDocs only bundles selected plugins in order to keep the size
+of the official image small. If the plugin you want to use is not included, 
+create a <code>user-requirements.txt</code> file in the repository root with the packages
+you want to install additionally, e.g.:</p>
+<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs-macros-plugin==0.7.0
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdocs-glightbox&gt;=0.3.1
+</span></code></pre></div>
+<p>Next, you can build the image with the following command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker build -t squidfunk/mkdocs-material .
+</span></code></pre></div>
+<p>The new image will have additional packages installed and can be used
+exactly like the official image.</p>
+</details>
+<h3 id="with-git">with git</h3>
+<p>Material for MkDocs can be directly used from <a href="https://github.com/squidfunk/mkdocs-material">GitHub</a> by cloning the
+repository into a subfolder of your project root which might be useful if you
+want to use the very latest version:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git clone https://github.com/squidfunk/mkdocs-material.git
+</span></code></pre></div>
+<p>The theme will reside in the folder <code>mkdocs-material/material</code>. After cloning
+from <code>git</code>, you must install all required dependencies with:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip install -e mkdocs-material
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Enterprise support</p>
+<p>If you're using Material for MkDocs in your organization and need
+assistance, e.g., to <strong>reduce build times</strong>, <strong>improve performance</strong> or
+ensure compliance, <a href="mailto:contact@squidfunk.com"><strong>get in touch</strong></a>
+to discuss our <strong>enterprise support</strong> offerings. We're happy to help!</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Note that improvements of existing features are sometimes released as
+patch releases, like for example improved rendering of content tabs, as
+they're not considered to be new features.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
