@@ -126,6 +126,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nevarok.com/nevarok-ml/documentation/experts/</loc>
+         <lastmod>2023-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nevarok.com/nevarok-ml/documentation/imitation/</loc>
+         <lastmod>2023-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nevarok.com/nevarok-ml/documentation/multibinary/</loc>
          <lastmod>2023-07-18</lastmod>
          <changefreq>daily</changefreq>
