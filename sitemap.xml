@@ -176,6 +176,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nevarok.com/nevarok-ml/documentation/reinforcement/</loc>
+         <lastmod>2023-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nevarok.com/nevarok-ml/documentation/reward_utils_api/</loc>
          <lastmod>2023-07-18</lastmod>
          <changefreq>daily</changefreq>
