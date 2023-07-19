@@ -21,7 +21,7 @@
         <link rel="next" href="../testing-and-deployment/">
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -1452,11 +1452,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-the-rl-agent" class="md-nav__link">
-    Creating the RL Agent
+  <a href="#creating-the-rl-trainer" class="md-nav__link">
+    Creating the RL Trainer
   </a>
   
-    <nav class="md-nav" aria-label="Creating the RL Agent">
+    <nav class="md-nav" aria-label="Creating the RL Trainer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1972,11 +1972,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-the-rl-agent" class="md-nav__link">
-    Creating the RL Agent
+  <a href="#creating-the-rl-trainer" class="md-nav__link">
+    Creating the RL Trainer
   </a>
   
-    <nav class="md-nav" aria-label="Creating the RL Agent">
+    <nav class="md-nav" aria-label="Creating the RL Trainer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2092,47 +2092,93 @@
 <ol>
 <li>In the Content Browser, right-click and create a new Blueprint Class.</li>
 <li>Search for "NevarokML" and select "ANevarokMLEnv" as the parent class.</li>
-<li>Name the Blueprint class, e.g., "MyRLEnvironment," and click "Create."</li>
+<li>Name the Blueprint class, e.g., "BP_BasicEnv," and click "Create."</li>
 </ol>
+<figure>
+<p><img alt="create-env" src="create-env.png" />
+  </p>
+<figcaption>Creation of Blueprint class derived from ANevarokMLEnv</figcaption>
+</figure>
 <h3 id="implementing-oninit-onstep-and-onreset-events">Implementing OnInit, OnStep, and OnReset Events</h3>
-<p>In the MyRLEnvironment Blueprint, you need to implement the OnInit, OnStep, and OnReset events. These events define how the environment initializes, updates during each time step, and resets when an episode is complete.</p>
+<p>In the BP_BasicEnv Blueprint, you need to implement the OnInit, OnStep, and OnReset events. These events define how the environment initializes, updates during each time step, and resets when an episode is complete.</p>
 <ol>
-<li>Open the MyRLEnvironment Blueprint in the Blueprint Editor.</li>
+<li>Open the BP_BasicEnv Blueprint in the Blueprint Editor.</li>
 <li>In the Event Graph, create Event Graph nodes for OnInit, OnStep, and OnReset.</li>
 <li>Implement the functionality for each event based on your RL environment's specific requirements.</li>
 <li>Use NevarokML API to update observations, perform actions, add rewards, and check for episode completion.</li>
 </ol>
-<h2 id="creating-the-rl-agent">Creating the RL Agent</h2>
+<figure>
+<p><img alt="env-events" src="env-events.png" />
+  </p>
+<figcaption>ANevarokMLEnv Event Graph nodes: OnInit, OnStep, and OnReset</figcaption>
+</figure>
+<figure>
+<p><img alt="env-graph" src="env-graph.png" />
+  </p>
+<figcaption>ANevarokMLEnv Event Graph example</figcaption>
+</figure>
+<h2 id="creating-the-rl-trainer">Creating the RL Trainer</h2>
 <h3 id="creating-a-blueprint-derived-from-anevarokmltrainer">Creating a Blueprint Derived from ANevarokMLTrainer</h3>
-<p>To create the RL agent, you need to create a Blueprint class that derives from ANevarokMLTrainer. This Blueprint will define the learning process and train the RL agent.</p>
+<p>To create the RL trainer, you need to create a Blueprint class that derives from ANevarokMLTrainer. This Blueprint will define the learning process and control the RL environments.</p>
 <ol>
 <li>In the Content Browser, right-click and create a new Blueprint Class.</li>
 <li>Search for "NevarokML" and select "ANevarokMLTrainer" as the parent class.</li>
-<li>Name the Blueprint class, e.g., "MyRLAgentTrainer," and click "Create."</li>
+<li>Name the Blueprint class, e.g., "BP_BasicTrainer," and click "Create."</li>
 </ol>
+<figure>
+<p><img alt="create-trainer" src="create-trainer.png" />
+  </p>
+<figcaption>Creation of Blueprint class derived from ANevarokMLTrainer</figcaption>
+</figure>
 <h3 id="implementing-onconstruct-and-onstart-events">Implementing OnConstruct and OnStart Events</h3>
-<p>In the MyRLAgentTrainer Blueprint, you need to implement the OnConstruct and OnStart events. The OnConstruct event sets up the agent's observation and action spaces, while the OnStart event starts the learning process.</p>
+<p>In the BP_BasicTrainer Blueprint, you need to implement the OnConstruct and OnStart events. The OnConstruct event sets up the agent's observation and action spaces, while the OnStart event starts the learning process.</p>
 <ol>
-<li>Open the MyRLAgentTrainer Blueprint in the Blueprint Editor.</li>
+<li>Open the BP_BasicTrainer Blueprint in the Blueprint Editor.</li>
 <li>In the Event Graph, create Event Graph nodes for OnConstruct and OnStart.</li>
 <li>In the OnConstruct event, use NevarokML API to update the agent's observation and action spaces according to your needs.</li>
 <li>In the OnStart event, call the Learn function to initiate the learning process.</li>
 <li>Use the NevarokML API to create the preferred RL algorithm (PPO, DQN, etc.) and set algorithm parameters.</li>
 </ol>
+<figure>
+<p><img alt="on-construct-example" src="on-construct-example.png" />
+  </p>
+<figcaption>ANevarokMLTrainer OnConstruct example</figcaption>
+</figure>
+<figure>
+<p><img alt="on-start-example" src="on-start-example.png" />
+  </p>
+<figcaption>ANevarokMLTrainer OnStart example</figcaption>
+</figure>
 <h2 id="training-the-rl-agent">Training the RL Agent</h2>
 <h3 id="choosing-an-rl-algorithm">Choosing an RL Algorithm</h3>
 <p>Select the RL algorithm that best fits your RL environment and requirements. NevarokML supports various RL algorithms that can be configured to suit different tasks.</p>
 <h3 id="configuring-the-algorithm">Configuring the Algorithm</h3>
-<p>Use the NevarokML API to configure the chosen RL algorithm within the MyRLAgentTrainer Blueprint. Set the hyperparameters and any other specific configurations needed for the algorithm.</p>
+<p>Use the NevarokML API to configure the chosen RL algorithm within the BP_BasicTrainer Blueprint. Set the hyperparameters and any other specific configurations needed for the algorithm.</p>
 <h2 id="running-the-learning-process">Running the Learning Process</h2>
 <h3 id="placing-the-actors-in-the-level">Placing the Actors in the Level</h3>
-<p>In the Level, place the MyRLAgentTrainer derived Actor and the MyRLEnvironment derived Actor.</p>
+<p>In the Level, place the BP_BasicTrainer derived Actor and the BP_BasicEnv derived Actor.</p>
 <ol>
-<li>Drag and drop the MyRLAgentTrainer derived Actor from the Content Browser into the Level.</li>
-<li>Similarly, place the MyRLEnvironment derived Actor in the Level.</li>
+<li>Drag and drop the BP_BasicTrainer derived Actor from the Content Browser into the Level.</li>
+<li>Similarly, place the BP_BasicEnv derived Actor in the Level.</li>
+<li>Add placed in Level BP_BasicEnv reference to the BP_BasicTrainer.</li>
 </ol>
+<figure>
+<p><img alt="trainer-setup" src="trainer-setup.png" />
+  </p>
+<figcaption>Referencing BP_BasicEnv in BP_BasicTrainer example</figcaption>
+</figure>
 <h3 id="starting-the-learning-process">Starting the Learning Process</h3>
 <p>After placing the Actors in the Level, press the Play button to start the learning process. The RL agent will interact with the environment, collect experiences, and update its policy during training.</p>
+<figure>
+<p><img alt="run-training" src="run-training.png" />
+  </p>
+<figcaption>Learning Process example</figcaption>
+</figure>
+<figure>
+<p><img alt="tensorboard-log" src="tensorboard-log.png" />
+  </p>
+<figcaption>TensorBoard Logging</figcaption>
+</figure>
 <h2 id="importing-the-trained-model">Importing the Trained Model</h2>
 <p>Upon completion of the training process, you can import the trained RL model using the regular Unreal Engine import flow. This allows you to deploy the trained agent in your Unreal Engine project for testing and deployment.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -2219,11 +2265,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
   
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   <script src="../../../assets/javascripts/custom.a1e08cb1.min.js"></script>
