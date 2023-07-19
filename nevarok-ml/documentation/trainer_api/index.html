@@ -21,7 +21,7 @@
         <link rel="next" href="../environment_overview/">
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -631,6 +631,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
       
       
+        
+          
         
           
         
@@ -1404,6 +1406,19 @@
     Learn
   </a>
   
+    <nav class="md-nav" aria-label="Learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-parameters" class="md-nav__link">
+    Method Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1732,6 +1747,20 @@
     <li class="md-nav__item">
       <a href="../reinforcement/" class="md-nav__link">
         Reinforcement Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-and-deployment/" class="md-nav__link">
+        Testing and Deployment
       </a>
     </li>
   
@@ -2266,6 +2295,19 @@
     Learn
   </a>
   
+    <nav class="md-nav" aria-label="Learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-parameters" class="md-nav__link">
+    Method Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2549,20 +2591,21 @@ Called every frame to update the trainer.</p>
 </span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">           </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">showStepDebug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
 </span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">           </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">showResetDebug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 </span></code></pre></div>
-Starts the learning process with the specified algorithm and parameters.<br></p>
-<blockquote>
-<p><code>algorithm</code> (<code>UNevarokMLBaseAlgorithm*</code>): A pointer to the algorithm object that defines the learning algorithm to be used.<br>
-<code>timesteps</code> (<code>int</code>): The maximum number of timesteps to run the learning process. The default value is 10,000.<br>
-<code>evalEps</code> (<code>int</code>): The number of evaluation episodes to run during the learning process. The default value is 0, indicating no evaluation episodes.<br>
-<code>saveFreq</code> (<code>int</code>): The frequency, in timesteps, at which the model should be saved during the learning process. The default value is 6,000.<br>
-<code>loadModelPath</code> (<code>FFilePath</code>): The file path to a pre-trained model that should be loaded before starting the learning process. The default value is an empty file path, indicating no pre-trained model should be loaded.<br>
-<code>saveModelName</code> (<code>FName</code>): The name to use when saving the trained model. The default value is "Model".<br>
-<code>deterministic</code> (<code>bool</code>): A flag indicating whether to use deterministic behavior during the learning process. The default value is true.<br>
-<code>showTensorboard</code> (<code>bool</code>): A flag indicating whether to show Tensorboard visualizations during the learning process. The default value is false.<br>
-<code>showReward</code> (<code>bool</code>): A flag indicating whether to show reward comparison(before and after) information after the learning process is complete. The default value is false.<br>
-<code>showStepDebug</code> (<code>bool</code>): A flag indicating whether to show step debugging information during the learning process. The default value is false.<br>
-<code>showResetDebug</code> (<code>bool</code>): A flag indicating whether to show reset debugging information during the learning process. The default value is true.<br></p>
-</blockquote>
+Starts the learning process with the specified algorithm and parameters.</p>
+<h5 id="method-parameters">Method Parameters</h5>
+<ul>
+<li><code>algorithm</code> (<code>UNevarokMLBaseAlgorithm*</code>): A pointer to the algorithm object that defines the learning algorithm to be used.</li>
+<li><code>timesteps</code> (<code>int</code>): The maximum number of timesteps to run the learning process. The default value is 10,000.</li>
+<li><code>evalEps</code> (<code>int</code>): The number of evaluation episodes to run during the learning process. The default value is 0, indicating no evaluation episodes.</li>
+<li><code>saveFreq</code> (<code>int</code>): The frequency, in timesteps, at which the model should be saved during the learning process. The default value is 6,000.</li>
+<li><code>loadModelPath</code> (<code>FFilePath</code>): The file path to a pre-trained model that should be loaded before starting the learning process. The default value is an empty file path, indicating no pre-trained model should be loaded.</li>
+<li><code>saveModelName</code> (<code>FName</code>): The name to use when saving the trained model. The default value is "Model".</li>
+<li><code>deterministic</code> (<code>bool</code>): A flag indicating whether to use deterministic behavior during the learning process. The default value is true.</li>
+<li><code>showTensorboard</code> (<code>bool</code>): A flag indicating whether to show Tensorboard visualizations during the learning process. The default value is false.</li>
+<li><code>showReward</code> (<code>bool</code>): A flag indicating whether to show reward comparison(before and after) information after the learning process is complete. The default value is false.</li>
+<li><code>showStepDebug</code> (<code>bool</code>): A flag indicating whether to show step debugging information during the learning process. The default value is false.</li>
+<li><code>showResetDebug</code> (<code>bool</code>): A flag indicating whether to show reset debugging information during the learning process. The default value is true.</li>
+</ul>
 <h3 id="override-methods">Override Methods</h3>
 <h4 id="beginplay">BeginPlay</h4>
 <p><div class="language-cpp highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ANevarokMLTrainer::BeginPlay</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
@@ -2585,11 +2628,12 @@ Overrides the RegisterActorTickFunctions function.</p>
   A --&gt;|Error| B((OnInvalid))
   OnStart --&gt;|Error| B
   OnStart --&gt;|Learn| C[/OnInit/]
-  C --&gt; OnReset
-  OnReset --&gt; D[OnStep]
-  D --&gt; D
-  D --&gt;|Done| OnReset
-  OnReset --&gt; Z((OnComplete))</code></pre>
+  C --&gt; E{OnReset}
+  E --&gt; D{OnStep}
+  D --&gt;|Error| B
+  D --&gt;|Not Done| D
+  D --&gt;|Done| E
+  E --&gt; Z((OnComplete))</code></pre>
 
 </div>
 
@@ -2735,11 +2779,11 @@ Implementation of the OnComplete event method.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
   
-      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   <script src="../../../assets/javascripts/custom.a1e08cb1.min.js"></script>

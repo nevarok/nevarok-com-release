@@ -18,10 +18,10 @@
         <link rel="prev" href="../nnemodel_api/">
       
       
-        <link rel="next" href="../experts/">
+        <link rel="next" href="../testing-and-deployment/">
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nevarokml-imitation-learning" class="md-skip">
+        <a href="#nevarokml-reinforcement-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -631,6 +631,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
       
       
+        
+          
         
           
         
@@ -1391,10 +1393,177 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reinforcement Learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Reinforcement Learning
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-rl-environment" class="md-nav__link">
+    Creating the RL Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating the RL Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-blueprint-derived-from-anevarokmlenv" class="md-nav__link">
+    Creating a Blueprint Derived from ANevarokMLEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-oninit-onstep-and-onreset-events" class="md-nav__link">
+    Implementing OnInit, OnStep, and OnReset Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-rl-agent" class="md-nav__link">
+    Creating the RL Agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating the RL Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-blueprint-derived-from-anevarokmltrainer" class="md-nav__link">
+    Creating a Blueprint Derived from ANevarokMLTrainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-onconstruct-and-onstart-events" class="md-nav__link">
+    Implementing OnConstruct and OnStart Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-the-rl-agent" class="md-nav__link">
+    Training the RL Agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Training the RL Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-an-rl-algorithm" class="md-nav__link">
+    Choosing an RL Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-algorithm" class="md-nav__link">
+    Configuring the Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-learning-process" class="md-nav__link">
+    Running the Learning Process
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the Learning Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placing-the-actors-in-the-level" class="md-nav__link">
+    Placing the Actors in the Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-learning-process" class="md-nav__link">
+    Starting the Learning Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-the-trained-model" class="md-nav__link">
+    Importing the Trained Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-and-deployment/" class="md-nav__link">
+        Testing and Deployment
+      </a>
     </li>
   
 
@@ -1762,6 +1931,143 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-rl-environment" class="md-nav__link">
+    Creating the RL Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating the RL Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-blueprint-derived-from-anevarokmlenv" class="md-nav__link">
+    Creating a Blueprint Derived from ANevarokMLEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-oninit-onstep-and-onreset-events" class="md-nav__link">
+    Implementing OnInit, OnStep, and OnReset Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-rl-agent" class="md-nav__link">
+    Creating the RL Agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating the RL Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-blueprint-derived-from-anevarokmltrainer" class="md-nav__link">
+    Creating a Blueprint Derived from ANevarokMLTrainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-onconstruct-and-onstart-events" class="md-nav__link">
+    Implementing OnConstruct and OnStart Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-the-rl-agent" class="md-nav__link">
+    Training the RL Agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Training the RL Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-an-rl-algorithm" class="md-nav__link">
+    Choosing an RL Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-algorithm" class="md-nav__link">
+    Configuring the Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-learning-process" class="md-nav__link">
+    Running the Learning Process
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the Learning Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placing-the-actors-in-the-level" class="md-nav__link">
+    Placing the Actors in the Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-learning-process" class="md-nav__link">
+    Starting the Learning Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-the-trained-model" class="md-nav__link">
+    Importing the Trained Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1775,11 +2081,65 @@
                   
 
 
-<h1 id="nevarokml-imitation-learning">NevarokML: Imitation Learning</h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This documentation page is reserved for the upcoming feature: <a href="https://imitation.readthedocs.io/en/latest/getting-started/what_is_imitation.html">Imitation Learning</a>.</p>
-</div>
+<h1 id="nevarokml-reinforcement-learning">NevarokML: Reinforcement Learning</h1>
+<p>NevarokML is a powerful machine learning plugin for Unreal Engine that allows developers to implement reinforcement learning (RL) capabilities within their projects. By creating a custom environment and agent, developers can train RL models to optimize agent behavior and accomplish specific tasks. This documentation page will guide you through the process of setting up and performing reinforcement learning using NevarokML in Unreal Engine.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, make sure you have the NevarokML plugin installed in your Unreal Engine project. Follow the installation instructions to integrate it into your project.</p>
+<h2 id="creating-the-rl-environment">Creating the RL Environment</h2>
+<h3 id="creating-a-blueprint-derived-from-anevarokmlenv">Creating a Blueprint Derived from ANevarokMLEnv</h3>
+<p>To create the RL environment, you need to create a Blueprint class that derives from ANevarokMLEnv. This Blueprint will define the interactions between the agent and the environment.</p>
+<ol>
+<li>In the Content Browser, right-click and create a new Blueprint Class.</li>
+<li>Search for "NevarokML" and select "ANevarokMLEnv" as the parent class.</li>
+<li>Name the Blueprint class, e.g., "MyRLEnvironment," and click "Create."</li>
+</ol>
+<h3 id="implementing-oninit-onstep-and-onreset-events">Implementing OnInit, OnStep, and OnReset Events</h3>
+<p>In the MyRLEnvironment Blueprint, you need to implement the OnInit, OnStep, and OnReset events. These events define how the environment initializes, updates during each time step, and resets when an episode is complete.</p>
+<ol>
+<li>Open the MyRLEnvironment Blueprint in the Blueprint Editor.</li>
+<li>In the Event Graph, create Event Graph nodes for OnInit, OnStep, and OnReset.</li>
+<li>Implement the functionality for each event based on your RL environment's specific requirements.</li>
+<li>Use NevarokML API to update observations, perform actions, add rewards, and check for episode completion.</li>
+</ol>
+<h2 id="creating-the-rl-agent">Creating the RL Agent</h2>
+<h3 id="creating-a-blueprint-derived-from-anevarokmltrainer">Creating a Blueprint Derived from ANevarokMLTrainer</h3>
+<p>To create the RL agent, you need to create a Blueprint class that derives from ANevarokMLTrainer. This Blueprint will define the learning process and train the RL agent.</p>
+<ol>
+<li>In the Content Browser, right-click and create a new Blueprint Class.</li>
+<li>Search for "NevarokML" and select "ANevarokMLTrainer" as the parent class.</li>
+<li>Name the Blueprint class, e.g., "MyRLAgentTrainer," and click "Create."</li>
+</ol>
+<h3 id="implementing-onconstruct-and-onstart-events">Implementing OnConstruct and OnStart Events</h3>
+<p>In the MyRLAgentTrainer Blueprint, you need to implement the OnConstruct and OnStart events. The OnConstruct event sets up the agent's observation and action spaces, while the OnStart event starts the learning process.</p>
+<ol>
+<li>Open the MyRLAgentTrainer Blueprint in the Blueprint Editor.</li>
+<li>In the Event Graph, create Event Graph nodes for OnConstruct and OnStart.</li>
+<li>In the OnConstruct event, use NevarokML API to update the agent's observation and action spaces according to your needs.</li>
+<li>In the OnStart event, call the Learn function to initiate the learning process.</li>
+<li>Use the NevarokML API to create the preferred RL algorithm (PPO, DQN, etc.) and set algorithm parameters.</li>
+</ol>
+<h2 id="training-the-rl-agent">Training the RL Agent</h2>
+<h3 id="choosing-an-rl-algorithm">Choosing an RL Algorithm</h3>
+<p>Select the RL algorithm that best fits your RL environment and requirements. NevarokML supports various RL algorithms that can be configured to suit different tasks.</p>
+<h3 id="configuring-the-algorithm">Configuring the Algorithm</h3>
+<p>Use the NevarokML API to configure the chosen RL algorithm within the MyRLAgentTrainer Blueprint. Set the hyperparameters and any other specific configurations needed for the algorithm.</p>
+<h2 id="running-the-learning-process">Running the Learning Process</h2>
+<h3 id="placing-the-actors-in-the-level">Placing the Actors in the Level</h3>
+<p>In the Level, place the MyRLAgentTrainer derived Actor and the MyRLEnvironment derived Actor.</p>
+<ol>
+<li>Drag and drop the MyRLAgentTrainer derived Actor from the Content Browser into the Level.</li>
+<li>Similarly, place the MyRLEnvironment derived Actor in the Level.</li>
+</ol>
+<h3 id="starting-the-learning-process">Starting the Learning Process</h3>
+<p>After placing the Actors in the Level, press the Play button to start the learning process. The RL agent will interact with the environment, collect experiences, and update its policy during training.</p>
+<h2 id="importing-the-trained-model">Importing the Trained Model</h2>
+<p>Upon completion of the training process, you can import the trained RL model using the regular Unreal Engine import flow. This allows you to deploy the trained agent in your Unreal Engine project for testing and deployment.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have successfully set up and implemented reinforcement learning in Unreal Engine using NevarokML. By creating custom environments and agents and configuring RL algorithms, you can train intelligent agents for various tasks and scenarios.</p>
+<blockquote>
+<p>For more in-depth information on NevarokML's features and capabilities, refer to the official NevarokML documentation and additional resources.</p>
+</blockquote>
 <hr />
 
 
@@ -1823,13 +2183,13 @@
         
         
           
-          <a href="../experts/" class="md-footer__link md-footer__link--next" aria-label="Next: Experts Training **(Upcoming)**" rel="next">
+          <a href="../testing-and-deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Testing and Deployment" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Experts Training **(Upcoming)**
+                Testing and Deployment
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1859,11 +2219,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
   
-      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   <script src="../../../assets/javascripts/custom.a1e08cb1.min.js"></script>
